@@ -162,7 +162,7 @@ li:hover {
 
 .delete-btn {
 	border: none;
-	background: #d2b40c;
+	background: darkgoldenrod;
 	color: white;
 	width: 24px;
 	height: 24px;
@@ -221,15 +221,15 @@ button {
 }
 
 #btnDesmarcarTudo {
-	color: #6b8e23;
+	color: grey
 }
 
 #btnEliminarTudo {
-	color: #d2b40c;
+	color: grey
 }
 
 .completed.check-btn {
-	background: #a8c20e;
+	background: #6b8e23
 }
 
 @media (max-width: 600px) {

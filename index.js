@@ -95,7 +95,7 @@ function init() {
 const checkBtn = document.createElement("button");
 checkBtn.classList.add("check-btn");
 if(task.done) {
-	checkBtn.textContent = "✔️"
+	checkBtn.style.backgroundColor = "#6b8e23";
 }
 
 checkBtn.addEventListener("click", (e) => {
@@ -105,10 +105,6 @@ checkBtn.addEventListener("click", (e) => {
 	saveTasks();
 	render();
 })
-
-
-
-
 
 
 
@@ -168,21 +164,34 @@ btnDesmarcarTudo.addEventListener("click", () => {
 const btnEliminarTudo = document.getElementById("btnEliminarTudo");
 
 btnEliminarTudo.addEventListener('click', () => {
+const temConcluidas = tasks.some(task => task.done);
+if(temConcluidas) {
+	const eliminarConcluidas = confirm("Eliminar apenas os itens concluídos?");
+	
+	if(eliminarConcluidas) {
+		tasks = tasks.filter(task => !task.done);
 
-	if(tasks.length === 0) {
+
+		saveTasks();
+		render();
 		return;
 	}
-  const confirmar = confirm("Eliminar o(s) item(ns) da lista?");
-  if(!confirmar) return;
+}
 
-  tasks = [];
-  saveTasks();
-  render();
+
+const eliminarTudo = confirm("Eliminar todos os itens da lista?");
+
+if(eliminarTudo) {
+	tasks = [];
+
+	saveTasks();
+	render();
+}
 });
 }
 init();
 
-if("serviceWoker" in navigator) {
+if("serviceWorker" in navigator) {
 	navigator.serviceWorker.register("./service-worker.js")
 	.then(() => {
 		console.log("Service Worker registado");
