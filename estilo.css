@@ -134,10 +134,7 @@ button:window-inactive {
 	transform: scale(0.97);
 }
 
-input:focus {
-	border-color: #b6d40f;
-	box-shadow: 0, 0 10px rgba(182, 212, 15, 0.2);
-}
+
 
 li:hover {
 	transform: traslateY(-2px);
@@ -221,6 +218,14 @@ button {
 	background: transparent;
 	flex-shrink: 0;
 
+}
+
+#btnDesmarcarTudo {
+	color: #6b8e23;
+}
+
+#btnEliminarTudo {
+	color: #d2b40c;
 }
 
 .completed.check-btn {
