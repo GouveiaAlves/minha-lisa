@@ -95,7 +95,7 @@ function init() {
 const checkBtn = document.createElement("button");
 checkBtn.classList.add("check-btn");
 if(task.done) {
-	checkBtn.style.backgroundColor = "#6b8e23";
+	checkBtn.textContent = "✔️"
 }
 
 checkBtn.addEventListener("click", (e) => {
@@ -107,8 +107,7 @@ checkBtn.addEventListener("click", (e) => {
 })
 
 
-
-    li.appendChild(checkBtn); 
+    //li.appendChild(checkBtn); 
     li.appendChild(span);
     li.appendChild(removeBtn);
     return li;
@@ -147,7 +146,7 @@ btnDesmarcarTudo.addEventListener("click", () => {
 	const existeRiscado = tasks.some((task) => task.done);
     if(!existeRiscado) return;
 
-	const confirmar = confirm("Desmarcar item(ns)");
+	const confirmar = confirm("Desmarcar o(s) item(itens) da lista?");
 	if(!confirmar) return;
     tasks.forEach((task) => {
 		if(task.done) {
@@ -166,7 +165,7 @@ const btnEliminarTudo = document.getElementById("btnEliminarTudo");
 btnEliminarTudo.addEventListener('click', () => {
 const temConcluidas = tasks.some(task => task.done);
 if(temConcluidas) {
-	const eliminarConcluidas = confirm("Eliminar apenas os itens concluídos?");
+	const eliminarConcluidas = confirm("Eliminar o(s) item(itens) concluído(s)?");
 	
 	if(eliminarConcluidas) {
 		tasks = tasks.filter(task => !task.done);
@@ -179,7 +178,7 @@ if(temConcluidas) {
 }
 
 
-const eliminarTudo = confirm("Eliminar todos os itens da lista?");
+const eliminarTudo = confirm("Eliminar o(s) item(itens) da lista?");
 
 if(eliminarTudo) {
 	tasks = [];
@@ -200,3 +199,4 @@ if("serviceWorker" in navigator) {
 		console.log("Erro", erro);
 	});
 }
+// falta o offline

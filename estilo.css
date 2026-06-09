@@ -16,16 +16,17 @@ body {
 
 }
 
-.container {
 
+
+.container {
+	height: 100vh;
 	width: 100%;
 	max-width: 500px;
 	margin: auto;
-
-
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
+
+
 }
 
 .topo-fixo {
@@ -65,7 +66,7 @@ h1 {
 
 .input-area input {
 	flex: 1;
-	padding: 14px;
+	padding: 14px 18px;
 	border: none;
 	border-radius: 16px;
 	font-size: 16px;
@@ -102,6 +103,7 @@ ul {
 	gap: 14px;
 	padding-bottom: 70px;
 	margin-bottom: 120px;
+	margin-top: -20px;
 
 }
 
@@ -156,16 +158,16 @@ li:hover {
 	opacity: 0.65;
 	filter: grayscale(20%);
 	transition: all 0.2s ease;
-
 	color: tomato;
+
 }
 
 .delete-btn {
 	border: none;
 	background: darkgoldenrod;
 	color: white;
-	width: 24px;
-	height: 24px;
+	width: 28px;
+	height: 28px;
 	border-radius: 50%;
 	cursor: pointer;
 	flex-shrink: 0;
@@ -199,9 +201,7 @@ li:hover {
 	border: none;
 	border-radius: 16px;
 	font-size: 16px;
-
 	bottom: 20px;
-
 	width: auto;
 
 }
@@ -214,7 +214,7 @@ button {
 	width: 24px;
 	height: 24px;
 	border-radius: 50%;
-	border: 1px solid #a8c20e;
+	border: 1px solid #102235;
 	background: transparent;
 	flex-shrink: 0;
 
@@ -228,9 +228,7 @@ button {
 	color: grey
 }
 
-.completed.check-btn {
-	background: #6b8e23
-}
+
 
 @media (max-width: 600px) {
 	body {

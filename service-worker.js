@@ -1,10 +1,11 @@
-const CACHE_NAME = "minha-lista-v1";
+const CACHE_NAME = "minhas-compras-v2";
 
 const FILES_TO_CACHE = [
 	"/",
 	"/index.html",
-	"/index.js",
-	"/estilo.css"
+	"/estilo.css",
+	"/index.js"
+	
 ];
 
 self.addEventListener("install", (event) => {
