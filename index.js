@@ -65,28 +65,32 @@ function init() {
     });
 
 
+let startX = 0;
+let currentX = 0;
 
+li.addEventListener("touchstart", (e) => {
+	startX = e.touches[0].clientX;
+});
 
+li.addEventListener("touchmove)", (e) => {
+	currentX = e.touches[0].clientX - startX;
 
+	if(currentX > 0) {
+		li.style.transform = `translateX(${currentX}px)`;
+	}   
+})
 
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "✖️";
-
-    removeBtn.classList.add("delete-btn");
-
-    removeBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-
-        const wantToDelete = confirm("Eliminar item?");
-
-        if(!wantToDelete) return;
-       li.classList.add("remover");
-	   setTimeout(() => {
+li.addEventListener("touchend", () => {
+	if(currentX > 120) {
 		tasks.splice(index, 1);
-		saveTasks;
+		saveTasks();
 		render();
-	   }, 300);
-    });
+	} else {
+		li.style.transform = "translateX(0)";
+	}
+
+	currentX = 0;
+});
 
 
 
@@ -109,7 +113,7 @@ checkBtn.addEventListener("click", (e) => {
 
     //li.appendChild(checkBtn); 
     li.appendChild(span);
-    li.appendChild(removeBtn);
+    
     return li;
 
 }
